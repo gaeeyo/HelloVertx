@@ -1,0 +1,31 @@
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.code.findbugs:jsr305:1.3.9'
+
+    compile 'io.vertx:vertx-web:3.9.1'
+
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = "jp.syoboi.hellovertx.App"

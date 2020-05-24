@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style type="text/css">
+        table {
+            border: 1px solid #888;
+            border-collapse: collapse
+        }
+
+        table td {
+            border: 1px solid #888;
+        }
+        table thead td { background-color: #eee; }
+    </style>
+</head>
+<body>
+<h1>$name</h1>
+<table id="fileTable">
+    <thead>
+    <tr>
+        <td>ファイル名</td>
+        <td>サイズ</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="..">..</a></td>
+        <td></td>
+    </tr>
+        #foreach($file in $files)
+            #if ($file.directory)
+            <tr>
+                <td><a href="$file.href">$file.baseName</a></td><td></td>
+            </tr>
+            #else
+            <tr>
+                <td><a href="$file.href">$file.baseName</a></td><td> $file.size</td>
+            </tr>
+
+            #end
+        #end
+    </tbody>
+    </tr>
+</table>
+</body>
+</html>
